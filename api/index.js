@@ -4,10 +4,10 @@ const express = require("express");
 const app = express();
 const winston = require("winston");
 
-require("./config/joiObjectId")();
-require("./config/logging")();
-require("./config/db")();
-require("./routes/index")(app);
+require("../config/joiObjectId")();
+require("../config/logging")();
+require("../config/db")();
+require("../routes/index")(app);
 
 const PORT = process.env.PORT || 4000;
 

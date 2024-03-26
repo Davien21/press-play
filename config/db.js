@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const winston = require("winston")
 
-const db = process.env.DB_URI
+const db = process.env.MONGO_URI;
 module.exports = () => {
   mongoose
     .connect(db, {
