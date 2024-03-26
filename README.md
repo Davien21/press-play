@@ -3,7 +3,7 @@
 <p> This is the official API for the Press Play App </p>    
   
 Hosted at:    
-https://press-play-test.herokuapp.com
+https://press-play-xyz
 
 First of all,  
 If you're reading this, please star this repo. we wanna be famous🥺  
@@ -20,7 +20,7 @@ simply set the environment variables that are included in the **.env.example** v
 ## How to use the API:  
 
 Find the documentation for this API at:    
-https://documenter.getpostman.com/view/9823092/TW74i51A 😋
+https://documenter.getpostman.com/view/9823092/TzsWuqcP 😋
 
 ## Live at:
 https://press-play-api.herokuapp.com/
