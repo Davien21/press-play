@@ -23,7 +23,7 @@ Find the documentation for this API at:
 https://documenter.getpostman.com/view/9823092/TzsWuqcP 😋
 
 ## Live at:
-https://press-play-api.herokuapp.com/
+https://api.press-play-xyz
 
 ## Comments:
 No testing...   
