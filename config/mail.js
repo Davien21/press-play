@@ -1,29 +1,13 @@
 const nodemailer = require("nodemailer");
 const Mailgen = require("mailgen");
 
-const {
-  EMAILER,
-  APP_URL,
-  GoogleClientId,
-  GoogleClientSecret,
-  GoogleClientRefreshToken,
-} = process.env;
-
-let googleAuth = {
-  type: "OAuth2",
-  user: EMAILER,
-  clientId: GoogleClientId,
-  clientSecret: GoogleClientSecret,
-  refreshToken: GoogleClientRefreshToken,
-};
-
 exports.transporter = transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: process.env.MAILER_HOST,
   port: 465,
-  secure: true,
-  auth: googleAuth,
-  tls: {
-    rejectUnauthorized: false,
+  secure: true, // true for 465, false for other ports
+  auth: {
+    user: process.env.MAILER_USERNAME,
+    pass: process.env.MAILER_PASSWORD,
   },
 });
 
@@ -77,16 +61,17 @@ exports.sendPasswordResetMail = async (user) => {
 };
 
 let sendEmail = (to, subject, mail) => {
-  const origin = to.origin || APP_URL;
+  const origin = to.origin || process.env.APP_URL;
   to = to.email || to;
 
   html = mailGenerator(origin).generate(mail);
 
   const message = {
-    from: `Press Play <${EMAILER}>`,
+    from: `Press Play <${process.env.MAILER_USERNAME}>`,
     to,
     subject,
     html,
   };
   return transporter.sendMail(message);
 };
+

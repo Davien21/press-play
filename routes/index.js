@@ -2,6 +2,8 @@ const express = require("express");
 const winston = require("winston");
 const cors = require("cors");
 
+const morgan = require("morgan");
+
 const episodes = require("../routes/episodes");
 const podcasts = require("../routes/podcasts");
 const users = require("../routes/users");
@@ -11,7 +13,7 @@ const error = require("../middlewares/error");
 module.exports = function (app) {
   app.use(express.json());
   app.use(cors());
-
+  app.use(morgan("dev"));
   app.get("/", (req, res, next) => {
     res.send(
       `Welcome to Press Play API. Documentation available at <a href="https://documenter.getpostman.com/view/9823092/TW74i51A">https://documenter.getpostman.com/view/9823092/TW74i51A.</a>`

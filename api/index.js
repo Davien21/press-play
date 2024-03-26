@@ -1,10 +1,11 @@
+require("express-async-errors");
 let NODE_ENV = process.env.NODE_ENV || "development";
 require("dotenv").config();
 const express = require("express");
 const app = express();
 
 require("../config/joiObjectId")();
-const logger = require("../config/logging")
+const logger = require("../config/logging");
 require("../config/db")();
 require("../routes/index")(app);
 
