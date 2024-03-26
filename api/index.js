@@ -1,16 +1,15 @@
 let NODE_ENV = process.env.NODE_ENV || "development";
-require("dotenv").config()
+require("dotenv").config();
 const express = require("express");
 const app = express();
-const winston = require("winston");
 
 require("../config/joiObjectId")();
-require("../config/logging")();
+const logger = require("../config/logging")
 require("../config/db")();
 require("../routes/index")(app);
 
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-  winston.info("app listening at port 4000");
+  logger.info("app listening at port 4000");
 });

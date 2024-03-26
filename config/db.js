@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const winston = require("winston")
+const logger = require("../config/logging")
 
 const db = process.env.MONGO_URI;
 module.exports = () => {
@@ -11,10 +11,10 @@ module.exports = () => {
       useCreateIndex: true,
     })
     .then(() => {
-      winston.info(`Connected to ${db}`);
+      logger.info(`Connected to ${db}`);
     })
     .catch((err) => {
-      return winston.error(err.message);
+      return logger.error(err.message);
     });
 
 };

@@ -1,15 +1,25 @@
-require('express-async-errors');
-const winston = require('winston');
+const { format, createLogger, transports } = require("winston");
+const { combine, printf, json, label, timestamp, errors } = format;
 
-module.exports = function() {
-  winston.handleExceptions(
-    new winston.transports.Console({ colorize: true, prettyPrint: true }),
-    new winston.transports.File({ filename: 'uncaughtExceptions.log'}))
-    
-    process.on('unhandledRejection', (ex)=> {
-      throw ex; 
-    })
+const consoleFormat = printf(({ level, message, label, timestamp, stack }) => {
+  return `${timestamp}\n[${label}] ${level}:\n${stack || message}\n`;
+});
 
-  winston.add(winston.transports.File, { filename: 'logfile.log' });
- 
-}
+module.exports = createLogger({
+  format: combine(
+    label({ label: `PRESS PLAY` }),
+    timestamp(),
+    errors({ stack: true }),
+    json()
+  ),
+  transports: [
+    new transports.Console({
+      format: combine(consoleFormat),
+    }),
+    new transports.File({ filename: "errors.log", level: "error" }),
+    new transports.File({ filename: "all-logs.log" }),
+  ],
+  rejectionHandlers: [
+    new transports.File({ filename: "unhandled-rejections.log" }),
+  ],
+});
