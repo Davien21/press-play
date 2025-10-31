@@ -14,6 +14,12 @@ module.exports = function (app) {
   app.use(express.json());
   app.use(cors());
   app.use(morgan("dev"));
+  
+  // Serve uploads folder as static files in development
+  if (process.env.NODE_ENV !== "production") {
+    app.use("/uploads", express.static("uploads"));
+  }
+  
   app.get("/", (req, res, next) => {
     res.send(
       `Welcome to Press Play API. Documentation available at <a href="https://documenter.getpostman.com/view/9823092/TW74i51A">https://documenter.getpostman.com/view/9823092/TW74i51A.</a>`

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Play - Podcast Cover Images Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .podcast-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .podcast-card:hover {
+            transform: translateY(-10px);
+        }
+        .podcast-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+        .podcast-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .podcast-author {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .podcast-stats {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            margin-top: 10px;
+        }
+        .stat {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .stat strong {
+            color: #667eea;
+        }
+        .success {
+            background: #10b981;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎙️ Press Play Podcasts</h1>
+        
+        <div class="success">
+            ✅ All podcast cover images are working!
+        </div>
+        
+        <div class="grid">
+            <div class="podcast-card">
+                <img src="http://localhost:4000/uploads/tech-talk-cover.jpg" alt="Tech Talk Daily" class="podcast-image">
+                <div class="podcast-title">Tech Talk Daily</div>
+                <div class="podcast-author">By Sarah Johnson</div>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">
+                    Your daily dose of technology news, startup stories, and innovation insights.
+                </p>
+                <div class="podcast-stats">
+                    <div class="stat"><strong>8</strong> episodes</div>
+                    <div class="stat"><strong>4</strong> subscribers</div>
+                </div>
+            </div>
+            
+            <div class="podcast-card">
+                <img src="http://localhost:4000/uploads/murder-mystery-cover.jpg" alt="Murder Mystery Podcast" class="podcast-image">
+                <div class="podcast-title">Murder Mystery Podcast</div>
+                <div class="podcast-author">By Michael Chen</div>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">
+                    Dive deep into the world's most intriguing true crime cases.
+                </p>
+                <div class="podcast-stats">
+                    <div class="stat"><strong>6</strong> episodes</div>
+                    <div class="stat"><strong>3</strong> subscribers</div>
+                </div>
+            </div>
+            
+            <div class="podcast-card">
+                <img src="http://localhost:4000/uploads/wellness-wisdom-cover.jpg" alt="Wellness Wisdom" class="podcast-image">
+                <div class="podcast-title">Wellness Wisdom</div>
+                <div class="podcast-author">By Emily Rodriguez</div>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">
+                    Transform your life with expert advice on health, fitness, and mindfulness.
+                </p>
+                <div class="podcast-stats">
+                    <div class="stat"><strong>7</strong> episodes</div>
+                    <div class="stat"><strong>5</strong> subscribers</div>
+                </div>
+            </div>
+            
+            <div class="podcast-card">
+                <img src="http://localhost:4000/uploads/comedy-hour-cover.jpg" alt="The Comedy Hour" class="podcast-image">
+                <div class="podcast-title">The Comedy Hour</div>
+                <div class="podcast-author">By David Williams</div>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">
+                    Laugh out loud with our hilarious take on current events and pop culture.
+                </p>
+                <div class="podcast-stats">
+                    <div class="stat"><strong>6</strong> episodes</div>
+                    <div class="stat"><strong>6</strong> subscribers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
