@@ -18,6 +18,7 @@ module.exports = function (app) {
         "http://localhost:3000",
         "http://localhost:3001",
         "https://press-play.site",
+        "https://www.press-play.site",
       ],
       credentials: true,
       allowedHeaders: [
