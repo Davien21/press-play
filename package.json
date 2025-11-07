@@ -8,6 +8,9 @@
     "dev": "nodemon api/index.js",
     "test": "jest --env=node --watchAll --verbose --coverage --runInBand"
   },
+  "engines": {
+    "node": "^22"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -31,13 +34,11 @@
     "nodemailer": "^6.4.17",
     "winston": "^3.3.3"
   },
-  "engines": {
-    "node": "^18.18.0"
-  },
   "devDependencies": {
     "handlebars": "^4.5.0",
     "jest": "^22.2.2",
     "nodemon": "^2.0.7",
     "supertest": "^3.0.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
